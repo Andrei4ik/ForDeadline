@@ -1,10 +1,12 @@
 import Phaser from 'phaser';
 
+
+
 //import Game from './scenes/GameScenes'
 //import Shop from './scenes/ShopScenes'
 //import Main from './scenes/MainScenes'
 
-let gameScene = Phaser.scene ('Game');
+let gameScene = new Phaser.Scene('Game');
 
 
 
@@ -19,7 +21,8 @@ const config = {
 
 const game = new Phaser.Game(config);
 
-gameScene.preload= function(){
+gameScene.preload = function(){
+    console.log("preload");
     this.load.image('grass','assets/dc-dngn/floor/dirt_full.png');
     this.load.image('rock','assets/dc-dngn/floor/pebble_brown1.png');
     this.load.image('water','assets/dc-dngn/water/dngn_deep_water.png');
@@ -29,11 +32,12 @@ gameScene.preload= function(){
 
 
 
-var s;
+
 
 gameScene.create = function()
 {
-    s = game.add.tileSprite(0, 0, 800, 600, 'forest');
+    this.add.sprite(0, 0, 'forest');
+    console.log("create");
 };
 
 
