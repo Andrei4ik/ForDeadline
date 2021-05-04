@@ -1,5 +1,7 @@
+import {config} from '../index.js';
 
-export default class GameScene extends Phaser.Scene {
+
+export class GameScene extends Phaser.Scene {
     constructor() {
         super ("Game");
     }
