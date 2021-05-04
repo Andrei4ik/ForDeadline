@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 
 
-import GameScene from './scenes/GameScenes'
+import GameScene from './scenes/GameScene'
 //import Shop from './scenes/ShopScenes'
 //import Main from './scenes/MainScenes'
 
