@@ -1,7 +1,7 @@
-import {Phaser} from 'phaser';
+import Phaser from 'phaser';
 
 
-import {GameScene} from './scenes/GameScene'
+import GameScene from './scenes/GameScene'
 //import ShopScene from './scenes/ShopScene'
 //import StartScene from './scenes/StartScene'
 
@@ -13,10 +13,11 @@ const config = {
     backgroundColor: "#806546",  
     rows: 15,   
     cols: 15, 
-    scene: GameScene ,//ShopScene,StartScene,
-};
+    scene: {GameScene ,}//ShopScene,StartScene,
+}; 
 
 const game = new Phaser.Game(config);
 
-export{ config };
+export { config };
+
 
