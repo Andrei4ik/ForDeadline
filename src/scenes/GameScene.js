@@ -1,5 +1,5 @@
 import { config } from '../index.js';
-
+import Tile from '../prefabs/Tile';
 
 export default class GameScene extends Phaser.Scene {
     constructor() {
@@ -16,17 +16,31 @@ export default class GameScene extends Phaser.Scene {
     }
 
     create() {
-        this.add.sprite(275, 0, 'back').setOrigin(0,0);;
+        this.createBack();
 
-        let positions = this.getFieldPositions();
-    
-        for(let position of positions) {
-            if(Math.random() > 0.4)
-                this.add.sprite(position.x, position.y, 'grass').setOrigin(0,0);
-            else
-                this.add.sprite(position.x, position.y, 'forest').setOrigin(0,0);
-        }
+        this.createTiles();
+
     }
+
+    createBack() {
+        this.add.sprite(275, 0, 'back').setOrigin(0,0);;
+    };
+
+
+    createTiles(){
+        this.tiles=[];
+        let positions = this.getFieldPositions();
+
+        for(let position of positions) {
+            this.tiles.push(new this.Tile(this, position));
+
+          //  if(Math.random() > 0.4)
+          //      this.add.sprite(position.x, position.y, 'grass').setOrigin(0,0);
+           // else
+            //    this.add.sprite(position.x, position.y, 'forest').setOrigin(0,0);
+        }
+    };
+
 
     getFieldPositions() {
         let positions = [];
