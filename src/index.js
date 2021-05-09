@@ -8,15 +8,22 @@ import ShopScene from './scenes/ShopScene'
 const config = {
     type: Phaser.AUTO,
     parent: 'phaser-example',
-    width: window.innerWidth,
-    height: window.innerHeight,
+    scale: {
+        mode: Phaser.Scale.FIT,
+        parent: 'phaser-example',
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: window.innerWidth,
+        height: window.innerHeight,
+    },
     backgroundColor: "#806546",  
     rows: 15,   
     cols: 15, 
-    scene: [GameScene ,ShopScene ,]//StartScene,]
+    scene: [GameScene ,ShopScene ,],//StartScene,]
 }; 
 
 const game = new Phaser.Game(config);
+
+
 
 export { config };
 

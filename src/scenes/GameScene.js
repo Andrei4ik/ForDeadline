@@ -32,7 +32,7 @@ export default class GameScene extends Phaser.Scene {
         let positions = this.getFieldPositions();
 
         for(let position of positions) {
-            this.tiles.push(new this.Tile(this, position));
+            this.tiles.push(new Tile(this, position));
 
           //  if(Math.random() > 0.4)
           //      this.add.sprite(position.x, position.y, 'grass').setOrigin(0,0);

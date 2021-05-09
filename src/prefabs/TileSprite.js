@@ -1,6 +1,6 @@
 export default class TileSprite{
 
-    SayName(){
+    static sayName(){
         let TileName;
         if(Math.random() > 0.4)
             TileName = 'grass';
