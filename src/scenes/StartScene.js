@@ -4,13 +4,13 @@ btnM: Phaser.GameObjects.Text = null;
 
 
 let Styles = {
-    Color = '#008080',
-    Font = 'Arial'
+    Color : '#008080',
+    Font : 'Arial'
 };
 let Texts = {
-    Play = 'Высадка',
-    Shop = 'Арсенал',
-    Title = 'Меню',
+    Play : 'Высадка',
+    Shop : 'Арсенал',
+    Title : 'Меню',
 
 };
 

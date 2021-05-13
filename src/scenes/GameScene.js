@@ -1,6 +1,8 @@
 import { config } from '../index.js';
 import Tile from '../prefabs/Tile';
 
+
+
 export default class GameScene extends Phaser.Scene {
     constructor() {
         super ("Game");
@@ -20,7 +22,33 @@ export default class GameScene extends Phaser.Scene {
 
         this.createTiles();
 
+        this.createBtnExit();
     }
+
+    createBtnExit() {
+        btnExit: Phaser.GameObjects.Text = null;
+
+        let Styles = {
+            Color : '#008080',
+            Font : 'Arial'
+        };
+        let Texts = {
+            exit : 'В Меню',
+        };
+
+        this.btnExit = this.add.text(            
+            this.cameras.main.centerX + 675,
+            this.cameras.main.centerY - 300,
+            Texts.exit,
+            {font: `48px ${Styles.Font}`, color: Styles.Color})
+        .setOrigin(0.0);
+
+        this.btnExit.setInteractive();
+        this.btnExit.once('pointerdown', () => {
+            this.scene.start('start');
+        });
+        return this.btnExit;
+    };
 
     createBack() {
         this.add.sprite(275, 0, 'back').setOrigin(0,0);;
@@ -33,11 +61,6 @@ export default class GameScene extends Phaser.Scene {
 
         for(let position of positions) {
             this.tiles.push(new Tile(this, position));
-
-          //  if(Math.random() > 0.4)
-          //      this.add.sprite(position.x, position.y, 'grass').setOrigin(0,0);
-           // else
-            //    this.add.sprite(position.x, position.y, 'forest').setOrigin(0,0);
         }
     };
 

@@ -7,7 +7,4 @@ export default class Tile extends Phaser.GameObjects.Sprite{
     this.setOrigin(0,0);
     this.scene.add.existing(this);
     }
-
-    
-
 }
