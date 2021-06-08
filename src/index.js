@@ -18,7 +18,7 @@ const config = {
     backgroundColor: "#313312",//"#806546",  
     rows: 15,   
     cols: 15, 
-    scene: [StartScene,GameScene ,ShopScene ,]
+    scene: [StartScene,ShopScene,GameScene ,]
 }; 
 
 const game = new Phaser.Game(config);

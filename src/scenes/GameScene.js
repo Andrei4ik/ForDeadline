@@ -14,6 +14,7 @@ export default class GameScene extends Phaser.Scene {
         this.load.image('dirt','assets/dc-dngn/floor/dirt0.png');
         this.load.image('forest','assets/dc-dngn/floor/dirt_forest.png');
         this.load.image('back','assets/back.png');
+        this.load.image('etin','assets/enemies/ettin.png');
         console.log("preload");
     }
 
@@ -23,6 +24,8 @@ export default class GameScene extends Phaser.Scene {
         this.createTiles();
 
         this.createBtnExit();
+
+        this.createUnit('etin');
     }
 
     createBtnExit() {
@@ -51,7 +54,7 @@ export default class GameScene extends Phaser.Scene {
     };
 
     createBack() {
-        this.add.sprite(275, 0, 'back').setOrigin(0,0);;
+        this.add.sprite(275, 0, 'back').setOrigin(0,0);
     };
 
 
@@ -81,6 +84,10 @@ export default class GameScene extends Phaser.Scene {
         }
     
         return positions;
+    }
+    createUnit(name){
+        let Enemy;
+        Enemy = game.add.sprite(0,0, name).setOrigin(0,0);
     }
 }
 
