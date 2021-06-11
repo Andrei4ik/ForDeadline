@@ -1,6 +1,5 @@
 import Phaser from 'phaser';
 
-
 import GameScene from './scenes/GameScene'
 import ShopScene from './scenes/ShopScene'
 import StartScene from './scenes/StartScene'
@@ -18,7 +17,7 @@ const config = {
     backgroundColor: "#313312",//"#806546",  
     rows: 15,   
     cols: 15, 
-    scene: [StartScene,ShopScene,GameScene ,]
+    scene: [GameScene,StartScene,ShopScene,]
 }; 
 
 const game = new Phaser.Game(config);
