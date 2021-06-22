@@ -1,6 +1,6 @@
 import { config } from '../index.js';
 import Tile from '../prefabs/Tile';
-
+import Enemy from '../prefabs/Enemy';
 
 
 export default class GameScene extends Phaser.Scene {
@@ -26,7 +26,7 @@ export default class GameScene extends Phaser.Scene {
 
         this.createBtnExit();
 
-        this.createUnit('etin');
+        this.createEnemy();
 
         this.createUnit('hero');
     }
@@ -89,6 +89,15 @@ export default class GameScene extends Phaser.Scene {
         return positions;
     }
     
+    createEnemy(){
+        this.matrixEnemy=[]
+        let positions = this.getFieldPositions();
+
+        for(let position of positions) {
+            this.matrixEnemy.push(new Enemy(this, position));
+        }
+    }
+
     createUnit(name){
         let Enemy;
         Enemy = this.add.sprite(0,0, name).setOrigin(0,0);
